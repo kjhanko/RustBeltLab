@@ -1,0 +1,123 @@
+/* CSS by Kerry J Hanko - 2020 */
+
+@font-face {
+  font-family: destroy_;
+  src: url('fonts/destroy_-webfont.woff')
+}
+
+html, body {
+  background: #343434;
+  color: LightPink;
+  line-height: 1.7;
+}
+
+img {
+  align-items: center;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+div {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-family: sans-serif;
+  margin-top: 0px;
+  display: inline-block;
+  text-align: center;
+  color: #95524c;
+  line-height: 1;
+}
+
+h2 {
+  margin-top: 0;
+  font-family: sans-serif;
+  display: inline-block;
+  text-align: center;
+  color: #95524c;
+  line-height: 1;
+  width: 70%;
+}
+
+h3, h4 {
+  margin: 0;
+  text-align: center;
+  color: #95524c;
+}
+
+button {
+  position: right;
+}
+
+a, svg, #modalButton {
+  color: LightPink;
+}
+
+a:hover, #x {
+  color: #95524c;
+}
+
+#wrapper {
+  padding-top: 0px;
+  margin: 0px;
+}
+
+#modalBody, #modal-header, #modal-dialog {
+  background: black;
+  opacity: 70%;  ;
+}
+
+#navBar {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  background: Black;
+  color: LightPink;
+  display: inline-flex;
+}
+
+#map {
+  height: 800px;
+  width: 100%;
+  display: inline-block;
+}
+
+#carouselExampleFade {
+  opacity: 80%;
+}
+
+#temporal-legend {
+  color: LightPink;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#attribute-legend {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: LightPink;
+}
+
+.sequence-control-container {
+  width: 350px;
+  height: 30px;
+  padding: 10px;
+  line-height: 45px;
+}
+
+.legend-control-container {
+  width: 300px;
+  background-color: #434343;
+  border: solid #343434 1px;
+  padding: 5px;
+}
+
+.range-slider {
+  width: 75%;
+}
+
+.leaflet-popup-content p {
+  margin: 0.2em 0;
+  text-align: center;
+}

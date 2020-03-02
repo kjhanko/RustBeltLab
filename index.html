@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Rise and Fall of the Rustbelt</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100 h-10" src="img/title1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/title2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/title3.jpg" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/title4.jpg" alt="Fourth slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/title5.jpg" alt="Fifth slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- <img src="img/Title.svg" alt="The Rise and Fall of the Rust Belt"></img> -->
+    <nav id="navBar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <a href id="aboutButton" data-toggle="modal" data-target="#about">About the Rust Belt</a>
+        <a href id="aboutButton" data-toggle="modal" data-target="#PopLoss">Peak Population vs. 2018</a>
+        <a href id="aboutButton" data-toggle="modal" data-target="#totalLoss">Percent Population Loss</a>
+        <a href id="aboutButton" data-toggle="modal" data-target="#recentLoss">Population Loss This Century</a>
+        <!-- <a href id="aboutButton" data-toggle="modal" data-target="#Pop4">Pop4</a> -->
+      </div>
+    </nav>
+    <div id="about" class="modal fade" role="dialog" style="display: none;">
+      <div class="modal-dialog">
+        <div id="modal-header" class="modal-header modalHeadFoot">
+          <h3 class="modal-title">The History of the "Rust Belt"</h3>
+          <button id="x" type="button" class="close" data-dismiss="modal">x</button>
+        </div>
+        <div id="modalBody" class="modal-body">
+          <p>The "Rust Belt" refers to portions of the Great Lakes, Midwest, and mid-Atlantic
+            United States which was characterized by cities built on mining and manufacturing
+            industies. With easy access to transport options via railroads, the Great Lakes,
+            and rivers, as well as proximity to mines to supply the factories, massive
+            population growth occurred throughout the region from the mid 19th to mid 20th
+            centuries.</p>
+
+          <p>By the mid 20th century, however, automation began replacing factory
+            jobs. By the 1970's and 1980's, manufacturing began moving overseas, causing
+            many of the area factories to shut down. The economy of the region took a
+            major hit during this time, with population falling for many major cities.
+            Walter Mondale dubbed the region the "Rust Belt", referring to the thousands
+            of factories left abandoned and ruined. Those cities that were unable to
+            adapt to a new economy continue to shrink today.</p>
+        </div>
+        <div id="modalHeadFoot" class="modal-footer">
+          <button id="modalButton" type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <div id="PopLoss" class="modal fade" role="dialog" style="display: none;">
+      <div class="modal-dialog">
+        <div id="modal-header" class="modal-header modalHeadFoot">
+          <h3 class="modal-title">Peak Population vs. Current</h3>
+          <button id="x" type="button" class="close" data-dismiss="modal">x</button>
+        </div>
+        <div id="modalBody" class="modal-body">
+          <style type="text/css">
+            .tg {
+              border-collapse: collapse;
+              border-spacing: 10px;
+            }
+
+            .tg td {
+              font-family: Tahoma, Geneva, sans-serif;
+              font-size: 14px;
+              padding: 15px 7px;
+              border-style: solid;
+              border-width: 1px;
+              overflow: hidden;
+              word-break: normal;
+              border-color: #343434;
+            }
+
+            .tg th {
+              font-family: Tahoma, Geneva, sans-serif;
+              font-size: 14px;
+              font-weight: normal;
+              padding: 15px 7px;
+              border-style: solid;
+              border-width: 1px;
+              overflow: hidden;
+              word-break: normal;
+              border-color: #343434;
+            }
+
+            .tg .tg-cly1 {
+              text-align: left;
+              vertical-align: middle
+            }
+
+            .tg .tg-smw1 {
+              color: #95524c;
+              font-weight: bold;
+              font-size: 16px;
+              font-family: Tahoma, Geneva, sans-serif !important;
+              border-color: #343434;
+              text-align: left;
+              vertical-align: middle
+            }
+          </style>
+          <table class="tg">
+            <tr>
+              <th class="tg-cly1"></th>
+              <th class="tg-smw1">Maximum<br>Population</th>
+              <th class="tg-smw1">2018<br>Population</th>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Detroit</td>
+              <td class="tg-cly1">1849568</td>
+              <td class="tg-cly1">672662</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Baltimore</td>
+              <td class="tg-cly1">949708</td>
+              <td class="tg-cly1">602495</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Cleveland</td>
+              <td class="tg-cly1">914808</td>
+              <td class="tg-cly1">383793</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">St. Louis</td>
+              <td class="tg-cly1">856796</td>
+              <td class="tg-cly1">302838</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Milwaukee</td>
+              <td class="tg-cly1">741324</td>
+              <td class="tg-cly1">592025</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Pittsburgh</td>
+              <td class="tg-cly1">676806</td>
+              <td class="tg-cly1">301048</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Buffalo</td>
+              <td class="tg-cly1">580132</td>
+              <td class="tg-cly1">256304</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Cincinnati</td>
+              <td class="tg-cly1">503998</td>
+              <td class="tg-cly1">302605</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Toledo</td>
+              <td class="tg-cly1">383818</td>
+              <td class="tg-cly1">274975</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Akron</td>
+              <td class="tg-cly1">290351</td>
+              <td class="tg-cly1">198006</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Dayton</td>
+              <td class="tg-cly1">262332</td>
+              <td class="tg-cly1">140640</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Syracuse</td>
+              <td class="tg-cly1">220583</td>
+              <td class="tg-cly1">142749</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Flint</td>
+              <td class="tg-cly1">196940</td>
+              <td class="tg-cly1">95943</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Gary</td>
+              <td class="tg-cly1">178320</td>
+              <td class="tg-cly1">75282</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Youngstown</td>
+              <td class="tg-cly1">170002</td>
+              <td class="tg-cly1">64958</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Erie</td>
+              <td class="tg-cly1">138440</td>
+              <td class="tg-cly1">96471</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">South Bend</td>
+              <td class="tg-cly1">132445</td>
+              <td class="tg-cly1">101860</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Canton</td>
+              <td class="tg-cly1">116912</td>
+              <td class="tg-cly1">70458</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Decatur</td>
+              <td class="tg-cly1">94081</td>
+              <td class="tg-cly1">71290</td>
+            </tr>
+            <tr>
+              <td class="tg-smw1">Wheeling</td>
+              <td class="tg-cly1">61659</td>
+              <td class="tg-cly1">26771</td>
+            </tr>
+          </table>
+        </div>
+        <div id="modalHeadFoot" class="modal-footer">
+          <button id="modalButton" type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <div id="totalLoss" class="modal fade" role="dialog" style="display: none;">
+      <div class="modal-dialog">
+        <div id="modal-header" class="modal-header modalHeadFoot">
+          <h3 class="modal-title">Percent Population Loss</h3>
+          <button id="x" type="button" class="close" data-dismiss="modal">x</button>
+        </div>
+        <div id="modalBody" class="modal-body">
+          <style type="text/css">
+            .tg {
+              border-collapse: collapse;
+              border-spacing: 0;
+            }
+
+            .tg td {
+              font-family: Tahoma, Geneva, sans-serif;
+              font-size: 14px;
+              padding: 10px 15px;
+              border-style: solid;
+              border-width: 1px;
+              overflow: hidden;
+              word-break: normal;
+              border-color: #343434;
+            }
+
+            .tg th {
+              font-family: Tahoma, Geneva, sans-serif;
+              font-size: 14px;
+              font-weight: normal;
+              padding: 10px 15px;
+              border-style: solid;
+              border-width: 1px;
+              overflow: hidden;
+              word-break: normal;
+              border-color: #343434;
+            }
+
+            .tg .tg-cly1 {
+              text-align: left;
+              vertical-align: middle
+            }
+
+            .tg .tg-vs35 {
+              font-weight: bold;
+              font-family: Tahoma, Geneva, sans-serif !important;
+              color: #95524c;
+              border-color: #343434;
+              text-align: left;
+              vertical-align: middle
+            }
+          </style>
+          <table class="tg">
+            <tr>
+              <th class="tg-vs35"></th>
+              <th class="tg-vs35">Percent Population<br>&nbsp;&nbsp;Loss</th>
+              <th class="tg-vs35">Population Loss</th>
+            </tr>
+            <tr>
+              <td class="tg-vs35">St. Louis</td>
+              <td class="tg-cly1">64.65%</td>
+              <td class="tg-cly1">553958</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Detroit</td>
+              <td class="tg-cly1">63.63%</td>
+              <td class="tg-cly1">1176906</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Youngstown</td>
+              <td class="tg-cly1">61.79%</td>
+              <td class="tg-cly1">105044</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Cleveland</td>
+              <td class="tg-cly1">58.05%</td>
+              <td class="tg-cly1">531015</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Gary</td>
+              <td class="tg-cly1">57.78%</td>
+              <td class="tg-cly1">103038</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Wheeling</td>
+              <td class="tg-cly1">56.58%</td>
+              <td class="tg-cly1">34888</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Buffalo</td>
+              <td class="tg-cly1">55.82%</td>
+              <td class="tg-cly1">323828</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Pittsburgh</td>
+              <td class="tg-cly1">55.52%</td>
+              <td class="tg-cly1">375758</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Flint</td>
+              <td class="tg-cly1">51.28%</td>
+              <td class="tg-cly1">100997</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Dayton</td>
+              <td class="tg-cly1">46.39%</td>
+              <td class="tg-cly1">121692</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Cincinnati</td>
+              <td class="tg-cly1">39.96%</td>
+              <td class="tg-cly1">201393</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Canton</td>
+              <td class="tg-cly1">39.73%</td>
+              <td class="tg-cly1">46454</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Baltimore</td>
+              <td class="tg-cly1">36.56%</td>
+              <td class="tg-cly1">347213</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Syracuse</td>
+              <td class="tg-cly1">35.29%</td>
+              <td class="tg-cly1">77834</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Akron</td>
+              <td class="tg-cly1">31.80%</td>
+              <td class="tg-cly1">92345</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Erie</td>
+              <td class="tg-cly1">30.32%</td>
+              <td class="tg-cly1">41969</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Toledo</td>
+              <td class="tg-cly1">28.36%</td>
+              <td class="tg-cly1">108843</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Decatur</td>
+              <td class="tg-cly1">24.22%</td>
+              <td class="tg-cly1">22791</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">South Bend</td>
+              <td class="tg-cly1">23.09%</td>
+              <td class="tg-cly1">30585</td>
+            </tr>
+            <tr>
+              <td class="tg-vs35">Milwaukee</td>
+              <td class="tg-cly1">20.14%</td>
+              <td class="tg-cly1">149299</td>
+            </tr>
+          </table>
+        </div>
+        <div id="modalHeadFoot" class="modal-footer">
+          <button id="modalButton" type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <div id="recentLoss" class="modal fade" role="dialog" style="display: none;">
+      <div class="modal-dialog">
+        <div id="modal-header" class="modal-header modalHeadFoot">
+          <h3 class="modal-title">Recent Population Trends</h3>
+          <button id="x" type="button" class="close" data-dismiss="modal">x</button>
+        </div>
+        <div id="modalBody" class="modal-body">
+          <p>Many Rust Belt cities shown here continue to struggle with population loss
+            even as suburbs continue to expand around them. Of the cities studied,
+            <b style="color:LightSalmon !important">Detroit, Gary, Flint, Youngstown,</b>
+            and <b style="color:LightSalmon !important">Cleveland</b> have fared the worst,
+            losing over 20% of their population since 2000. </p>
+          <p><b style="color:LightSalmon !important">Syracuse</b> and <b style="color:LightSalmon !important">Milwaukee</b>
+            meanwhile saw the least loss in the last 20 years, at under 3%. </p>
+          <p>While the area continues to provide manufacturing, cities are expanding into
+            newer industies such as biotech, nanotech, robotics, creative industries, polymers,
+            and even casinos and convention centers for recovery. </p>
+        </div>
+        <div id="modalHeadFoot" class="modal-footer">
+          <button id="modalButton" type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+  <!--scripts-->
+  <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
+  <script src="js/leaflet.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
