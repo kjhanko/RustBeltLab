@@ -342,7 +342,7 @@ function getData(map) {
 }
 
 $('.carousel').carousel({
-  interval: 10000
-})
+  interval: 10000,
+});
 
 $(document).ready(createMap);

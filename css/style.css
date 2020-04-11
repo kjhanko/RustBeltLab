@@ -1,10 +1,5 @@
 /* CSS by Kerry J Hanko - 2020 */
 
-@font-face {
-  font-family: destroy_;
-  src: url('fonts/destroy_-webfont.woff')
-}
-
 html, body {
   background: #343434;
   color: LightPink;
@@ -101,8 +96,8 @@ a:hover, #x {
 
 .sequence-control-container {
   width: 350px;
-  height: 30px;
-  padding: 10px;
+  height: 60px;
+  padding: 20px;
   line-height: 45px;
 }
 
@@ -110,11 +105,38 @@ a:hover, #x {
   width: 300px;
   background-color: #434343;
   border: solid #343434 1px;
-  padding: 5px;
+  padding: 20px;
 }
 
 .range-slider {
-  width: 75%;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  background: #505050;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance:none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #95524c;
+  cursor: pointer;
+}
+
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #95524c;
+  cursor: pointer;
 }
 
 .leaflet-popup-content p {
